@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة ناصر | تقنية المعلومات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fas fa-shield-alt"></i> مدونة ناصر</div>
+        <button id="dark-btn"><i class="fas fa-moon"></i> الوضع المظلم</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="tab-link active" onclick="openTab('home', event)">الرئيسية</a></li>
+            <li><a href="#" class="tab-link" onclick="openTab('about', event)">نبذة عني</a></li>
+            <li><a href="#" class="tab-link" onclick="openTab('blog', event)">المواد والمصادر</a></li>
+            <li><a href="#" class="tab-link" onclick="openTab('contact', event)">للاستفسار والتواصل معي </a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="page active">
+            <div class="hero">
+               <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&auto=format&fit=crop" alt="ناصر" class="avatar-img">
+
+
+                <h1>مرحباً، أنا ناصر</h1>
+                <p>طالب تقنية معلومات بجامعة طرابلس. مهتم بالأمن السيبراني، تحليل البيانات</p>
+                <div class="hero-btns">
+                    <button onclick="openTab('about', event)">نبذة عني والجامعة</button>
+                    <button onclick="openTab('contact', event)">تواصل معي</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- صفحة نبذة عني -->
+        <section id="about" class="page">
+            <div class="card">
+                <h2>نبذة عني</h2>
+                <p>أنا ناصر، طالب بكلية تقنية المعلومات في جامعة طرابلس. أعتمد في دراستي على التفكير التحليلي والمنطق البرمجي، وأسعى للتخصص والتطوير المستمر في مجال الأمن السيبراني (Cybersecurity).</p>
+            </div>
+
+            <div class="card">
+                <h3>المواد الدراسية (جامعة طرابلس)</h3>
+                <ul class="subjects-list">
+                    <li><i class="fas fa-book"></i> مقدمة في تقنية المعلومات (ITGS111)</li>
+                    <li><i class="fas fa-book"></i> الحلول التقنية (ITGS113)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في هندسة الشبكات (ITGS215)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في هندسة البرمجيات (ITGS213)</li>
+                    <li><i class="fas fa-book"></i> تصميم الدوائر المنطقية (ITGS126)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في البرمجة (ITGS122)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في برمجة الانترنت (ITGS226)</li>
+                    <li><i class="fas fa-book"></i> رياضة 2 (ITMM122)</li>
+                    <li><i class="fas fa-book"></i> تراكيب منفصلة (ITGS217)</li>
+                    <li><i class="fas fa-book"></i> لغة إنجليزية 2 (ITEL121)</li>
+                    <li><i class="fas fa-book"></i> كتابة التقارير العلمية (ITGS304)</li>
+                    <li><i class="fas fa-book"></i> لغة عربية 2 (ITAR121)</li>
+                    <li><i class="fas fa-book"></i> معمارية الحاسوب (ITGS223)</li>
+                    <li><i class="fas fa-book"></i> تراكيب البيانات (ITGS220)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في علم البيانات (ITGS242)</li>
+                    <li><i class="fas fa-book"></i> البرمجة الشيئية (ITGS211)</li>
+                    <li><i class="fas fa-book"></i> التحليل العددي (ITGS219)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في قواعد البيانات (ITGS228)</li>
+                    <li><i class="fas fa-book"></i> مقدمة في الذكاء الاصطناعي (ITGS240)</li>
+                    <li><i class="fas fa-book"></i> أمن المعلومات (ITGS224)</li>
+                    <li><i class="fas fa-book"></i> إدارة المشاريع (ITGS303)</li>
+                    <li><i class="fas fa-book"></i> نظم التشغيل (ITGS302)</li>
+                    <li><i class="fas fa-book"></i> تصميم وتحليل الخوارزميات (ITGS301)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- صفحة المواد والمصادر -->
+        <section id="blog" class="page">
+            <h2 style="margin: 10px 0 15px; color: var(--main-color);">المواد الدراسية</h2>
+            <p style="margin-bottom: 15px;">اضغط على أي مادة لعرض شرحها وملف الـ PDF الخاص بها.</p>
+            <div id="subjects-grid" class="subjects-grid"></div>
+        </section>
+
+        <!-- صفحة اتصل بي (تم إرجاع كافة الروابط) -->
+        <section id="contact" class="page">
+            <div class="card">
+                <h2>تواصل معي مباشرة</h2>
+                <p style="margin-bottom: 15px;">يمكنك مراسلتي عبر أي من حساباتي الرسمية التالية:</p>
+
+                <div class="social-links">
+                    <a href="https://ig.me/m/nmq._07" target="_blank" class="btn insta"><i class="fab fa-instagram"></i> إنستغرام DM</a>
+                    <a href="https://www.facebook.com/share/186f8M5pXb/?mibextid=wwXIfr" target="_blank" class="btn fb"><i class="fab fa-facebook"></i> فيسبوك</a>
+                    <a href="mailto:nassermatous72@gmail.com" class="btn mail"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+                    <a href="https://github.com/nmq-07" target="_blank" class="btn github"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_KEY" method="POST">
+                    <input type="text" name="name" placeholder="اسمك الكامل" required>
+                    <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+                    <textarea name="message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+                    <button type="submit" class="save-btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="subject-modal" class="modal-overlay">
+        <div class="modal-box">
+            <button id="modal-close" class="modal-close"><i class="fas fa-times"></i></button>
+            <img id="modal-image" class="modal-image" alt="">
+            <div class="modal-body">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description" class="modal-description"></p>
+                <div id="modal-pdf-area"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | مدونة ناصر - جامعة طرابلس</p>
+        <div class="footer-socials">
+            <a href="https://github.com/nmq-07" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/nmq._07" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/186f8M5pXb/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:nassermatous72@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
