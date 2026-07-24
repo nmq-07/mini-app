@@ -26,7 +26,7 @@ darkBtn.addEventListener('click', function() {
 });
 
 const subjectsTemplate = [
-    { id: "itgs111", code: "ITGS111", name: "مقدمة في تقنية المعلومات", image: "images/itgs111.png", description: "", pdf: "" },
+    { id: "itgs111", code: "ITGS111", name: "مقدمة في تقنية المعلومات", image: "images/itgs111.png", description: "", pdf: "itgs111.pdf" },
     { id: "itgs113", code: "ITGS113", name: "الحلول التقنية", image: "images/itgs113.png", description: "", pdf: "" },
     { id: "itgs215", code: "ITGS215", name: "مقدمة في هندسة الشبكات", image: "images/itgs215.png", description: "", pdf: "" },
     { id: "itgs213", code: "ITGS213", name: "مقدمة في هندسة البرمجيات", image: "images/itgs213.png", description: "", pdf: "" },
