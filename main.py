@@ -1,22 +1,18 @@
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
-# ضع توكن البوت والـ ID الخاص بك كأدمن
 BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
-ADMIN_ID = 123456789  # استبدله بـ ID تيليجرام الخاص بك
-
+ADMIN_ID = 
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# قائمة المشتركين (تخزين مؤقت في الذاكرة)
+
 paid_users = {ADMIN_ID}
 
-# ================= 1. أمر البداية للمشتركين =================
 @bot.message_handler(commands=['start'])
 def start_cmd(message):
     user_id = message.from_user.id
     if user_id in paid_users:
         markup = InlineKeyboardMarkup()
-        # ضع رابط الموقع المنشور (GitHub Pages أو Vercel)
         web_app = WebAppInfo(url="https://YOUR_WEB_APP_URL_HERE")
         markup.add(InlineKeyboardButton("💻 فتح المنصة التعليمية", web_app=web_app))
         
@@ -24,7 +20,6 @@ def start_cmd(message):
     else:
         bot.reply_to(message, "⚠️ هذه المنصة خاصة للمشتركين فقط. يرجى التواصل مع الإدارة للاشتراك.")
 
-# ================= 2. أوامر الأدمن (Admin Commands) =================
 @bot.message_handler(commands=['admin'])
 def admin_cmd(message):
     if message.from_user.id != ADMIN_ID:
