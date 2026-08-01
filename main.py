@@ -15,7 +15,6 @@ from telebot.types import (
     WebAppInfo,
 )
 
-import data_store
 import code_runner
 from subjects_data import SUBJECTS, get_subject
 
