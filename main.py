@@ -16,7 +16,8 @@ from telebot.types import (
 )
 import data_store
 import code_runner
-from subjects_data import SUBJECTS, get_subject
+from subjects_data     
+import SUBJECTS, get_subject
 
 BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
 WEB_APP_URL = "https://YOUR_WEB_APP_URL_HERE"
